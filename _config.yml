@@ -1,0 +1,42 @@
+baseurl: ''
+exclude: ['README.md']
+permalink: pretty
+title: 'TenThousands Lab'
+
+collections:
+  services:
+    output: true
+    permalink: /services/:path/
+  policies:
+    output: true
+    permalink: /policies/:path/
+  team:
+    output: true
+    permalink: /team/:path/
+  testimonials:
+    output: true
+    permalink: /testimonials/:path/
+
+defaults:
+  - scope:
+      type: services
+    values:
+      layout: service
+      bodyClass: page-services-single
+  - scope:
+      type: policies
+    values:
+      layout: service
+      bodyClass: page-services-single
+  - scope:
+      path: 'images'
+    values:
+      image: true
+
+sass:
+  style: compact # possible values: nested expanded compact compressed
+
+google_analytics_id: null
+
+plugins:
+  - jekyll-environment-variables
